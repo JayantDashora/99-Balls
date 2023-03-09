@@ -6,6 +6,10 @@ using System;
 public class TargetBall : MonoBehaviour
 {
 
+    // Variables 
+
+    
+
     void Start()
     {
 
@@ -16,4 +20,15 @@ public class TargetBall : MonoBehaviour
     {
         
     }
+
+    // Destroying ball when it collides with the player weapon
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.CompareTag("Weapon")){
+            Destroy(gameObject);
+        }
+    }
+
+
+
 }

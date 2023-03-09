@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4999451644610000901}
   - component: {fileID: 6041715099893213083}
   - component: {fileID: 8919864033782091353}
-  - component: {fileID: -8725029212219641668}
+  - component: {fileID: -3361546069833856959}
   m_Layer: 0
   m_Name: PlayerWeapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,13 +118,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.05
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: f12298d16fdfd154789a8738aa63c1ab, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8725029212219641668
+--- !u!114 &-3361546069833856959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,4 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c99fe3fd5a28b940850beed12a84169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceDirection: {x: 0, y: 0}
   forceFactor: 10
+  normalScale: {x: 0.4, y: 0.4, z: 0.4}
+  pressedScale: {x: 0.35, y: 0.35, z: 0.35}
+  gravityForWeapon: 0.05
