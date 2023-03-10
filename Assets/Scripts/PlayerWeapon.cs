@@ -6,69 +6,33 @@ public class PlayerWeapon : MonoBehaviour
 {
 
     // Variables
-
-    private int primaryMouseButton = 0;
-    [SerializeField] private Vector2 forceDirection;
-    [SerializeField] private int forceFactor = 8;
-
-    [SerializeField] private Vector3 normalScale = new Vector3(0.4f,0.4f,0.4f);
-    [SerializeField] private Vector3 pressedScale = new Vector3(0.35f,0.35f,0.35f);
-
-    [SerializeField] private float gravityForWeapon = 0.1f;
-
-    
+    [SerializeField] private int forceFactor = 8;    
 
     // References
 
     private Rigidbody2D weaponRb;
-
-
+    [SerializeField] private GameObject weaponSpawner;
+    private WeaponSpawner weaponSpawnerScript;
 
 
     void Start()
     {
+
+        weaponSpawner = GameObject.Find("WeaponSpawner");
+
         weaponRb = GetComponent<Rigidbody2D>();
+        weaponSpawnerScript = weaponSpawner.GetComponent<WeaponSpawner>();
+
+        weaponRb.AddForce(forceFactor*weaponSpawnerScript.finalForceDirection,ForceMode2D.Impulse);
 
     }
 
+    // Weapon gets destroyed if it collides with base
 
-    void Update()
-    {
-
-        DragWeapon();
-        ReleaseWeapon();
-
-    }
-
-    // When player drags the ball to aim
-
-    private void DragWeapon(){
-
-        if(Input.GetMouseButton(primaryMouseButton)){
-
-            transform.localScale = pressedScale;
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            forceDirection = ((Vector2)transform.position-mousePos).normalized;
-
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.name == "Base"){
+            Destroy(gameObject);
         }
     }
-
-    // When player releases button to shoot the ball
-    private void ReleaseWeapon(){
-
-        if(Input.GetMouseButtonUp(primaryMouseButton)){
-
-            weaponRb.AddForce(forceDirection*forceFactor,ForceMode2D.Impulse);
-            transform.localScale = normalScale;
-            weaponRb.gravityScale = gravityForWeapon;
-
-        }        
-    }
-
-
-
-    
-
-
 
 }

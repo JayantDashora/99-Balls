@@ -117,8 +117,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0.05
   m_Material: {fileID: 6200000, guid: f12298d16fdfd154789a8738aa63c1ab, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -136,8 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c99fe3fd5a28b940850beed12a84169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceDirection: {x: 0, y: 0}
   forceFactor: 10
-  normalScale: {x: 0.4, y: 0.4, z: 0.4}
-  pressedScale: {x: 0.35, y: 0.35, z: 0.35}
-  gravityForWeapon: 0.05
+  weaponSpawner: {fileID: 0}
