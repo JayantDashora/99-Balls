@@ -21,9 +21,10 @@ public class TargetBall : MonoBehaviour
         
     }
 
-    // Destroying ball when it collides with the player weapon
+    // Checking collisions
 
     private void OnCollisionEnter2D(Collision2D other) {
+        // Destroying target ball if it collides with player weapon 
         if(other.gameObject.CompareTag("Weapon")){
             Destroy(gameObject);
         }

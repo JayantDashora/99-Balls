@@ -9,6 +9,7 @@ public class GameDataManager : MonoBehaviour
 
     [HideInInspector] public int noOfWeapons = 1;
     [HideInInspector] public int score = 0;
+    [HideInInspector] public int starsCount = 0;
 
     void Start()
     {
