@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameloopManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameloopManager : MonoBehaviour
     private GameDataManager gameDataManagerScript;
 
     [SerializeField] private GameObject targetBall;
+    [SerializeField] private Button fastForwardButton;
 
 
     
@@ -43,6 +45,7 @@ public class GameloopManager : MonoBehaviour
             if(GameObject.FindWithTag("Weapon") == null){
                 weaponSpawnerScript.canShoot = true;
                 gameDataManagerScript.score++;
+                fastForwardButton.gameObject.SetActive(false);
                 //Slow down time scale
                 Time.timeScale = 1.0f;
                 PushTargetBallsAhead();

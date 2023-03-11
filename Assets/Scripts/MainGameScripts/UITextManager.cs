@@ -8,18 +8,16 @@ public class UITextManager : MonoBehaviour
 
     // References
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI noOfWeaponsText;
     [SerializeField] private TextMeshProUGUI starsText;
     [SerializeField] private TextMeshProUGUI highScoreText;
-
-    [SerializeField] private GameDataManager gameDataManager;
+    [SerializeField] private TextMeshProUGUI noOfWeaponsText;
+    [SerializeField] private GameObject gameDataManager;
     private GameDataManager gameDataManagerScript;
 
-
-    void Start()
-    {
+    void Start(){
         gameDataManagerScript = gameDataManager.GetComponent<GameDataManager>();
     }
+
 
 
     void Update()

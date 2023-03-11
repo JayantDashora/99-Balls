@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSpawner : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class WeaponSpawner : MonoBehaviour
     [SerializeField] private GameObject weapon;
     [SerializeField] private GameObject gameDataManager;
     private GameDataManager gameDataManagerScript;
+    [SerializeField] private Button fastForwardButton;
 
 
 
@@ -35,7 +37,10 @@ public class WeaponSpawner : MonoBehaviour
     void Update()
     {
 
-        if(canShoot == true){
+        // Stops player from shooting backwards 
+        bool validShot = transform.position.y > Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
+
+        if(canShoot == true && validShot == true){
             DragWeapon();
             ReleaseWeapon();
         }
@@ -47,6 +52,8 @@ public class WeaponSpawner : MonoBehaviour
     // When player drags the ball to aim
 
     private void DragWeapon(){
+
+
 
         if(Input.GetMouseButton(primaryMouseButton)){
 
@@ -60,12 +67,15 @@ public class WeaponSpawner : MonoBehaviour
     // When player releases button to shoot the ball
     private void ReleaseWeapon(){
 
+
+
         if(Input.GetMouseButtonUp(primaryMouseButton)){
 
 
             finalForceDirection = forceDirection;
             transform.localScale = normalScale;
             canShoot = false;
+            fastForwardButton.gameObject.SetActive(true);
 
             StartCoroutine(SpawnWeapon());
             
