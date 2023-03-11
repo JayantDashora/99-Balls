@@ -43,6 +43,8 @@ public class GameloopManager : MonoBehaviour
             if(GameObject.FindWithTag("Weapon") == null){
                 weaponSpawnerScript.canShoot = true;
                 gameDataManagerScript.score++;
+                //Slow down time scale
+                Time.timeScale = 1.0f;
                 PushTargetBallsAhead();
                 SpawnTargetBalls();
                 

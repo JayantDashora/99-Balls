@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class TargetBall : MonoBehaviour
 {
 
-    // Variables 
+    // References 
 
-    
+
+
 
     void Start()
     {
-
     }
 
 
     void Update()
     {
-        
+
+
+
     }
 
     // Checking collisions

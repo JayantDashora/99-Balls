@@ -9,6 +9,8 @@ public class UITextManager : MonoBehaviour
     // References
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI noOfWeaponsText;
+    [SerializeField] private TextMeshProUGUI starsText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
 
     [SerializeField] private GameDataManager gameDataManager;
     private GameDataManager gameDataManagerScript;
@@ -24,5 +26,7 @@ public class UITextManager : MonoBehaviour
     {
         scoreText.text = gameDataManagerScript.score.ToString();
         noOfWeaponsText.text = gameDataManagerScript.noOfWeapons.ToString();
+        starsText.text = gameDataManagerScript.stars.ToString();
+        highScoreText.text = gameDataManagerScript.highScore.ToString();
     }
 }
