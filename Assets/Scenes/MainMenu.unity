@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 1324682641}
   - component: {fileID: 1324682640}
   - component: {fileID: 1324682639}
+  - component: {fileID: 1324682642}
   m_Layer: 5
   m_Name: StoreButton
   m_TagString: Untagged
@@ -984,7 +985,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1324682640}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1324682642}
+        m_TargetAssemblyTypeName: MainMenuButtonFunctions, Assembly-CSharp
+        m_MethodName: StoreButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1324682640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,6 +1036,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324682637}
   m_CullTransparentMesh: 1
+--- !u!114 &1324682642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324682637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f54df122e397a4db9bd48f40845e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1563004422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1713,7 @@ GameObject:
   - component: {fileID: 2055414408}
   - component: {fileID: 2055414407}
   m_Layer: 5
-  m_Name: SettingsButton
+  m_Name: 'TutorialButton '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

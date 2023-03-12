@@ -8,10 +8,11 @@ public class WeaponSpawner : MonoBehaviour
     // Variables
     private int primaryMouseButton = 0;
     [HideInInspector] public Vector2 finalForceDirection;
-    
+    private Vector2 forceDirection;
+
 
     // Variables visible in the inspector
-    [SerializeField] private Vector2 forceDirection;
+    
     [SerializeField] private float timeDurationBetweenWeaponSpawns = 1.0f;
     [SerializeField] private Vector3 normalScale = new Vector3(0.4f,0.4f,0.4f);
     [SerializeField] private Vector3 pressedScale = new Vector3(0.35f,0.35f,0.35f);
@@ -25,6 +26,7 @@ public class WeaponSpawner : MonoBehaviour
     [SerializeField] private GameObject gameDataManager;
     private GameDataManager gameDataManagerScript;
     [SerializeField] private Button fastForwardButton;
+
 
 
 
@@ -47,13 +49,13 @@ public class WeaponSpawner : MonoBehaviour
 
 
 
+
     }
 
     // When player drags the ball to aim
 
+
     private void DragWeapon(){
-
-
 
         if(Input.GetMouseButton(primaryMouseButton)){
 
@@ -94,6 +96,7 @@ public class WeaponSpawner : MonoBehaviour
         }
 
     }
+
 
 
 

@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  noOfWeaponsText: {fileID: 0}
   starsText: {fileID: 0}
   highScoreText: {fileID: 0}
-  gameDataManager: {fileID: 657317712257053779}
+  noOfWeaponsText: {fileID: 0}
+  gameDataManager: {fileID: 657317712257053781}

@@ -17,7 +17,10 @@ public class HUDManager : MonoBehaviour
 
     void Start()
     {
+
         StartIntroSeq();
+
+        
     }
 
     void Update()
@@ -32,7 +35,8 @@ public class HUDManager : MonoBehaviour
     }
 
     private void EndIntroSeq(){
-        introHUD.SetActive(false);
+
+        introHUD.SetActive(false);       
         mainMenu.SetActive(true);
     }
 }

@@ -6,18 +6,26 @@ public class PlayerWeapon : MonoBehaviour
 {
 
     // Variables
-    [SerializeField] private int forceFactor = 8;    
+    [SerializeField] private int forceFactor = 8;
+    [SerializeField] private Sprite[] weaponSkinArray;
+      
 
     // References
 
     private Rigidbody2D weaponRb;
-    [SerializeField] private GameObject weaponSpawner;
+    private GameObject weaponSpawner;
     private WeaponSpawner weaponSpawnerScript;
+
+    private GameObject gameDataManager;
+    private GameDataManager gameDataManagerScript;
+    private SpriteRenderer weaponSpriteRenderer;
 
 
 
     void Start()
     {
+
+        
 
         weaponSpawner = GameObject.Find("WeaponSpawner");
 
@@ -25,7 +33,15 @@ public class PlayerWeapon : MonoBehaviour
         weaponRb = GetComponent<Rigidbody2D>();
         weaponSpawnerScript = weaponSpawner.GetComponent<WeaponSpawner>();
 
+        gameDataManager = GameObject.Find("GameDataManager");
+        gameDataManagerScript = gameDataManager.GetComponent<GameDataManager>();
+
         weaponRb.AddForce(forceFactor*weaponSpawnerScript.finalForceDirection,ForceMode2D.Impulse);
+
+        // Setting the player skin to the one they have chosen
+
+        weaponSpriteRenderer = GetComponent<SpriteRenderer>();
+        weaponSpriteRenderer.sprite = weaponSkinArray[gameDataManagerScript.playerSkinIndex];
 
     }
 

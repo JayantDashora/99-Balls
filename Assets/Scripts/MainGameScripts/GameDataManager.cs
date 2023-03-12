@@ -11,6 +11,7 @@ public class GameDataManager : MonoBehaviour
     [HideInInspector] public int score = 0;
     [HideInInspector] public int stars;
     [HideInInspector] public int highScore = 0;
+    [HideInInspector] public int playerSkinIndex;
 
     
 
@@ -21,6 +22,9 @@ public class GameDataManager : MonoBehaviour
 
         // Loading the highscore value at the start of the level.
         highScore = PlayerPrefs.GetInt("highscore");
+
+        // Loading the playerskin at the start of the level.
+        playerSkinIndex = PlayerPrefs.GetInt("playerskin");
     }
 
 

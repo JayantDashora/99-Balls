@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonFunctions : MonoBehaviour
 {
@@ -9,13 +10,18 @@ public class ButtonFunctions : MonoBehaviour
 
     [SerializeField] private float fastForwardRate = 2.0f;
 
+
     // References
     [SerializeField] private GameObject weaponSpawner;
     private WeaponSpawner weaponSpawnerScript;
 
 
+
     void Start() {
+        weaponSpawner = GameObject.Find("WeaponSpawner");
         weaponSpawnerScript = weaponSpawner.GetComponent<WeaponSpawner>(); 
+
+
     }
     
     public void FastForward(){
@@ -24,4 +30,6 @@ public class ButtonFunctions : MonoBehaviour
             Time.timeScale = fastForwardRate;
         }
     }
+
+ 
 }
