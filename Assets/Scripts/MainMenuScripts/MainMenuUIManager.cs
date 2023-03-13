@@ -14,7 +14,7 @@ public class MainMenuUIManager : MonoBehaviour
     void Update()
     {
         mainMenustarsText.text = PlayerPrefs.GetInt("stars").ToString();
-        mainMenuhighScoreText.text = PlayerPrefs.GetInt("highscore").ToString();
+        mainMenuhighScoreText.text =  "Highscore\n\n" + PlayerPrefs.GetInt("highscore").ToString();
     }
 }
 

@@ -25,12 +25,18 @@ public class GameloopManager : MonoBehaviour
     [SerializeField] private GameObject targetBall;
     [SerializeField] private Button fastForwardButton;
 
+    private PickupSpawner pickupSpawnerScript;
+    [SerializeField] private GameObject baseLine;
+    private BaseLineScript baseLineScript;
+
 
     
     void Start()
     {
        weaponSpawnerScript = weaponSpawner.GetComponent<WeaponSpawner>();
        gameDataManagerScript = gameDataManager.GetComponent<GameDataManager>();
+       pickupSpawnerScript = GetComponent<PickupSpawner>();
+       baseLineScript = baseLine.GetComponent<BaseLineScript>();
 
        SpawnTargetBalls();
        
@@ -50,6 +56,10 @@ public class GameloopManager : MonoBehaviour
                 Time.timeScale = 1.0f;
                 PushTargetBallsAhead();
                 SpawnTargetBalls();
+                pickupSpawnerScript.SpawnPickup();
+                baseLineScript.isFull = !baseLineScript.isFull;
+                weaponSpawner.transform.position = (new Vector2(baseLineScript.firstBallXPos,weaponSpawner.transform.position.y));
+
                 
                 
             }
@@ -79,11 +89,22 @@ public class GameloopManager : MonoBehaviour
         GameObject[] targetBalls;
         targetBalls = GameObject.FindGameObjectsWithTag("TargetBall");
 
+        GameObject[] pickUps;
+        pickUps = GameObject.FindGameObjectsWithTag("Pickup");
+
         foreach(GameObject targetBall in targetBalls){
 
             // Push the object ahead on the screen for the next round
 
             targetBall.transform.Translate(new Vector2(0,pushLength));
+            
+        }
+
+        foreach(GameObject pickup in pickUps){
+
+            // Push the object ahead on the screen for the next round
+
+            pickup.transform.Translate(new Vector2(0,pushLength));
             
         }
 

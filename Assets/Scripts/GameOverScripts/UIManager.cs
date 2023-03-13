@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         gameOverstarsText.text = PlayerPrefs.GetInt("stars").ToString();
-        gameOverhighScoreText.text = PlayerPrefs.GetInt("highscore").ToString();
-        gameOverscoreText.text = PlayerPrefs.GetInt("score").ToString();
+        gameOverhighScoreText.text = "HIGHSCORE\n" + PlayerPrefs.GetInt("highscore").ToString();
+        gameOverscoreText.text = "YOUR SCORE\n" + PlayerPrefs.GetInt("score").ToString();
     }
 }

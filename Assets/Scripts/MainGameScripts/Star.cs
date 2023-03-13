@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Star : MonoBehaviour
 {
 
@@ -10,8 +10,13 @@ public class Star : MonoBehaviour
     private GameObject gameDataManager;
     private GameDataManager gameDataManagerScript;
 
+    private GameObject weaponSpawner;
+
+
+
     void Start()
     {
+       weaponSpawner = GameObject.Find("WeaponSpawner");
        gameDataManager = GameObject.Find("GameDataManager");
        gameDataManagerScript = gameDataManager.GetComponent<GameDataManager>();
 
@@ -20,6 +25,12 @@ public class Star : MonoBehaviour
 
     void Update()
     {
+
+        // Checking Game over condition
+
+        if(transform.position.y <= weaponSpawner.transform.position.y){
+            Destroy(gameObject);
+        }
         
     }
 

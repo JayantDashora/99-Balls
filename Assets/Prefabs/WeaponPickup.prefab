@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3651016204202054229}
   m_Layer: 0
   m_Name: WeaponPickup
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,6 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c4bf65ef586734d8f62bca366cbf1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSkinArray:
+  - {fileID: 21300000, guid: b55bf15b400f7234b8bec87caf41945e, type: 3}
+  - {fileID: 21300000, guid: fb7230e603dbab5428ee182837763396, type: 3}
+  - {fileID: 21300000, guid: cfc3163174044ad4fb8f2afca986559f, type: 3}
+  - {fileID: 21300000, guid: 40e93c94027417d44b831164a830e5a4, type: 3}
+  - {fileID: 21300000, guid: cdbf0b0445dda024f8834f7ebab377e9, type: 3}
 --- !u!58 &-3651016204202054229
 CircleCollider2D:
   m_ObjectHideFlags: 0

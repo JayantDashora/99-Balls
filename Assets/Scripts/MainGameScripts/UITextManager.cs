@@ -25,6 +25,6 @@ public class UITextManager : MonoBehaviour
         scoreText.text = gameDataManagerScript.score.ToString();
         noOfWeaponsText.text = gameDataManagerScript.noOfWeapons.ToString();
         starsText.text = gameDataManagerScript.stars.ToString();
-        highScoreText.text = gameDataManagerScript.highScore.ToString();
+        highScoreText.text = "HIGHSCORE  " + gameDataManagerScript.highScore.ToString();
     }
 }

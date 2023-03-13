@@ -138,8 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceFactor: 20
   weaponSkinArray:
-  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  - {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  - {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  - {fileID: 21300000, guid: b55bf15b400f7234b8bec87caf41945e, type: 3}
+  - {fileID: 21300000, guid: fb7230e603dbab5428ee182837763396, type: 3}
+  - {fileID: 21300000, guid: cfc3163174044ad4fb8f2afca986559f, type: 3}
+  - {fileID: 21300000, guid: 40e93c94027417d44b831164a830e5a4, type: 3}
+  - {fileID: 21300000, guid: cdbf0b0445dda024f8834f7ebab377e9, type: 3}

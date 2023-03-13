@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Weapon
   - TargetBall
+  - Pickup
   layers:
   - Default
   - TransparentFX
