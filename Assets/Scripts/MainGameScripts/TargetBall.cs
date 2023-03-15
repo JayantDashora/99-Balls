@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TargetBall : MonoBehaviour
 {
+    // Variables
     private int gameOverScreenIndex = 2;
     private int hitLimit;
 
@@ -16,6 +17,10 @@ public class TargetBall : MonoBehaviour
 
     private GameObject gameDataManager;
     private GameDataManager gameDataManagerScript;
+    [SerializeField] private ParticleSystem explosionParticleSystem;
+
+
+
 
 
 
@@ -43,8 +48,13 @@ public class TargetBall : MonoBehaviour
         // Ball destruction condition
 
         if(hitLimit <= 0){
-            Destroy(gameObject);
+
+            Instantiate(explosionParticleSystem,transform.position,transform.rotation);
+            Destroy(gameObject,0.05f);
+            
+            
         }
+
 
         // Target Ball Health
 
@@ -57,7 +67,8 @@ public class TargetBall : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         // Destroying target ball if it collides with player weapon 
         if(other.gameObject.CompareTag("Weapon")){
-            hitLimit--;           
+            hitLimit--;
+            
         }
 
 
@@ -70,13 +81,7 @@ public class TargetBall : MonoBehaviour
         //Updating hitlimit text on the screen
         hitLimitText.text = hitLimit.ToString();
 
-
-
-
     }
-
-    
-
 
 
 }   

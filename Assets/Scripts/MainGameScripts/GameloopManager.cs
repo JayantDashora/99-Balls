@@ -64,6 +64,9 @@ public class GameloopManager : MonoBehaviour
                 
             }
         }
+
+        // Fix bug
+        FixPickupsOnSameLocationBug();
     }
 
     // Spawn target balls at the top of the screen 
@@ -106,6 +109,24 @@ public class GameloopManager : MonoBehaviour
 
             pickup.transform.Translate(new Vector2(0,pushLength));
             
+        }
+
+
+    }
+
+    // Checking if two pickups are on the same location (bug)
+
+    private void FixPickupsOnSameLocationBug(){
+
+        GameObject[] allPickupsOnScreen = GameObject.FindGameObjectsWithTag("Pickup");
+
+        for(int i = 0; i < allPickupsOnScreen.Length ; i++){
+            for(int j = 0; j < allPickupsOnScreen.Length; j++){
+                if((i != j) & (allPickupsOnScreen[i].transform.position == allPickupsOnScreen[j].transform.position)){
+                    Destroy(allPickupsOnScreen[i]);
+                    Destroy(allPickupsOnScreen[j]);
+                }
+            }
         }
 
 

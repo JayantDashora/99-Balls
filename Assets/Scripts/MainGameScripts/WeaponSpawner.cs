@@ -30,6 +30,7 @@ public class WeaponSpawner : MonoBehaviour
 
 
 
+
     void Start()
     {
         gameDataManagerScript = gameDataManager.GetComponent<GameDataManager>();
@@ -45,6 +46,7 @@ public class WeaponSpawner : MonoBehaviour
         if(canShoot == true && validShot == true){
             DragWeapon();
             ReleaseWeapon();
+
         }
 
 
@@ -80,6 +82,7 @@ public class WeaponSpawner : MonoBehaviour
             fastForwardButton.gameObject.SetActive(true);
 
             StartCoroutine(SpawnWeapon());
+
             
 
         }        

@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitLimitText: {fileID: 8346473864402167431}
+  explosionParticleSystem: {fileID: 247489582227477426, guid: 9e6462d2c57019e4985169e0a7329126, type: 3}
 --- !u!58 &6729691838763360668
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -274,8 +275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -225.21, y: -397.8}
-  m_SizeDelta: {x: 28.574, y: 18.3499}
+  m_AnchoredPosition: {x: -222.9386, y: -397.8}
+  m_SizeDelta: {x: 33.1168, y: 18.3499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5546367823513777253
 CanvasRenderer:
@@ -368,7 +369,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -1.6480675, w: 0}
+  m_margin: {x: 0, y: 0, z: -4.4677525, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

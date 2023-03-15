@@ -22,6 +22,7 @@ public class PlayerWeapon : MonoBehaviour
 
 
 
+
     void Start()
     {
 
@@ -51,6 +52,7 @@ public class PlayerWeapon : MonoBehaviour
 
         // Weapon gets destroyed if it collides with base
         if(other.gameObject.name == "Base"){
+
             Destroy(gameObject);
         }
 
