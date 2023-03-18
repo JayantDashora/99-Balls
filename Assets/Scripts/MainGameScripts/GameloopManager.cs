@@ -39,6 +39,12 @@ public class GameloopManager : MonoBehaviour
        baseLineScript = baseLine.GetComponent<BaseLineScript>();
 
        SpawnTargetBalls();
+
+       // Fix bug where there is no target balls at the start 
+
+       if(GameObject.FindWithTag("TargetBall") == null){
+            SpawnTargetBalls();            
+       }
        
     }
 

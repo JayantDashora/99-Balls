@@ -20,6 +20,8 @@ public class PlayerWeapon : MonoBehaviour
     private GameDataManager gameDataManagerScript;
     private SpriteRenderer weaponSpriteRenderer;
 
+    private TrailRenderer trailRen;
+
 
 
 
@@ -43,6 +45,28 @@ public class PlayerWeapon : MonoBehaviour
 
         weaponSpriteRenderer = GetComponent<SpriteRenderer>();
         weaponSpriteRenderer.sprite = weaponSkinArray[gameDataManagerScript.playerSkinIndex];
+
+        // Setting weapon bal trail to match the color of the ball
+
+        trailRen = GetComponent<TrailRenderer>();
+
+        if(gameDataManagerScript.playerSkinIndex == 1){
+            trailRen.startColor = new Color(1, 0, 0, 1);
+            trailRen.endColor = new Color(0, 0, 0, 0);
+        }
+        else if(gameDataManagerScript.playerSkinIndex == 2){
+            trailRen.startColor = new Color(1, 0.92f, 0.016f, 1);
+            trailRen.endColor = new Color(0, 0, 0, 0);
+        }
+        else if(gameDataManagerScript.playerSkinIndex == 3){
+            trailRen.startColor = new Color(1f, 0.454f, 0.0156f,1);
+            trailRen.endColor = new Color(0, 0, 0, 0);
+        }
+        else if(gameDataManagerScript.playerSkinIndex == 4){
+            trailRen.startColor = new Color(0, 0, 1, 1);
+            trailRen.endColor = new Color(0, 0, 0, 0);
+        }
+
 
     }
 

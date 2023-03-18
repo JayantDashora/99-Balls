@@ -10,6 +10,9 @@ public class TargetBall : MonoBehaviour
     private int gameOverScreenIndex = 2;
     private int hitLimit;
 
+    private Vector2 orignalPos;
+
+
     // References 
 
     private GameObject weaponSpawner;
@@ -34,6 +37,7 @@ public class TargetBall : MonoBehaviour
         // Generally the maximum value is less than or equal to 2*score.
 
         hitLimit = Random.Range(1,2*gameDataManagerScript.score);
+        orignalPos = transform.localPosition;
     }
 
 
@@ -60,6 +64,7 @@ public class TargetBall : MonoBehaviour
 
         BallTextSetup();
 
+
     }
 
     // Checking collisions
@@ -68,6 +73,7 @@ public class TargetBall : MonoBehaviour
         // Destroying target ball if it collides with player weapon 
         if(other.gameObject.CompareTag("Weapon")){
             hitLimit--;
+            Camera.main.GetComponent<CameraShake>().ShakeCamera();
             
         }
 
