@@ -42,7 +42,7 @@ public class GameloopManager : MonoBehaviour
 
        // Fix bug where there is no target balls at the start 
 
-       if(GameObject.FindWithTag("TargetBall") == null){
+       while(GameObject.FindWithTag("TargetBall") == null){
             SpawnTargetBalls();            
        }
        

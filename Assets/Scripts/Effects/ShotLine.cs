@@ -19,17 +19,19 @@ public class ShotLine : MonoBehaviour
 
     private LineRenderer lineRen;
     [SerializeField] private GameObject weaponSpawner;
+    private WeaponSpawner weaponSpawnerScript;
 
     void Start()
     {
         lineRen = GetComponent<LineRenderer>();
+        weaponSpawnerScript = weaponSpawner.GetComponent<WeaponSpawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if(Input.GetMouseButton(primaryMouseButton)){
+        if(Input.GetMouseButton(primaryMouseButton) && weaponSpawnerScript.canShoot == true){
 
             lineRen.enabled = true;
 
